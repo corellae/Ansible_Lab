@@ -1,0 +1,8 @@
+---
+- name: Run nexus setup
+  hosts: repo
+  become: yes
+
+  roles: 
+    - basic_setup
+    - nexus

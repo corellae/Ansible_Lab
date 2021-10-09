@@ -1,0 +1,47 @@
+---
+# tasks file for nexus
+
+- name: Add nexus user
+  user:
+    name: nexus
+
+- name: Install Java
+  include: install_java.yml
+  when: need_java
+
+- name: Create nexus install dir
+  file:
+    path: "{{ nexus_install_dir }}"
+    state: directory
+    owner: nexus
+    group: nexus
+    mode: '0755'
+
+- name: Extract files
+  unarchive:
+    src: "{{ nexus_installer }}"
+    dest: "{{ nexus_install_dir }}"
+    owner: nexus
+    group: nexus
+
+- name: Change extracted directories permissions
+  file:
+    path: "{{ nexus_install_dir }}"
+    owner: nexus
+    group: nexus
+    recurse: yes
+
+- name: Setup nexus as service
+  template:
+    src: nexus.service.j2
+    dest: /etc/systemd/system/nexus.service
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Reload, enable and start nexus systemd service
+  systemd:
+    name: nexus.service
+    enabled: yes
+    state: started
+    daemon_reload: yes

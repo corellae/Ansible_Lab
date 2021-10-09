@@ -1,0 +1,7 @@
+---
+- name: Run basic host setup
+  hosts: localhost
+  become: yes
+
+  roles:
+    - basic_setup 

@@ -1,0 +1,23 @@
+---
+- name: Setup a Jenkins Master Server
+  hosts: jenkins_master
+  become: yes
+  
+  tasks:
+
+  - name: Get repo file
+    get_url:
+      url: "{{ repo_url }}"
+      dest: /etc/yum.repos.d/
+
+
+  - name: Import key
+    rpm_key:
+      state: present
+      key: "{{ key_url }}"
+
+
+  - name: Install packages
+    yum:
+      name: "{{ packages }}"
+      state: present

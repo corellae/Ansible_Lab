@@ -1,0 +1,11 @@
+---
+
+- name: Copy java rpm
+  copy:
+    src: "{{ installers_dir }}/{{ java_pkg }}"
+    dest: /tmp
+
+- name: Install java rpm
+  yum:
+    name: /tmp/{{ java_pkg }}
+    state: present

@@ -1,0 +1,8 @@
+[db]
+datavault.uxrealm.lab
+
+[dns]
+resolver-master.uxrealm.lab
+
+[repo]
+nexus.uxrealm.lab

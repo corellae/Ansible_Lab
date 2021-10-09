@@ -1,0 +1,23 @@
+---
+# variables for all groups
+
+installers_dir: /installers
+java_pkg: jdk-8u301-linux-x64.rpm
+
+basic_tools:
+  - wget
+  - sysstat
+  - lsof
+  - net-tools
+  - bind-utils
+  - vim
+  - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  - git
+  - xorg-x11-server-Xorg
+  - xorg-x11-xauth
+  - xorg-x11-apps
+  - xorg-x11-server-utils*
+  - xorg-x11-utils
+  - screen
+  - zip
+  - unzip

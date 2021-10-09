@@ -1,0 +1,15 @@
+---
+- name: Setup a Jenkins Worker Server
+  hosts: jenkins_worker
+  become: yes
+
+  tasks:
+
+  - name: Create jenkins user
+    user:
+      name: jenkins
+      comment: Jenkins Automation Server
+      shell: /bin/false
+      home: /var/lib/jenkins
+
+  - name: Install Java Development Kit

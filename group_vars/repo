@@ -1,0 +1,8 @@
+---
+# variables for repo group
+
+need_java: true
+nexus_version: 3.30.1-01
+nexus_pkg: "nexus-{{ nexus_version }}-unix.tar.gz"
+nexus_installer: "{{ installers_dir }}/{{ nexus_pkg }}"
+nexus_install_dir: /opt/nexus

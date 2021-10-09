@@ -1,0 +1,7 @@
+---
+# tasks file for basic_setup
+
+- name: Install common tools
+  yum:
+    name: "{{ basic_tools }}"
+    state: present
