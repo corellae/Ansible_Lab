@@ -1,6 +1,6 @@
 ---
 - name: Run basic host setup
-  hosts: localhost
+  hosts: repo
   become: yes
 
   roles:
