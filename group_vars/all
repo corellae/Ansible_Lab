@@ -21,3 +21,6 @@ basic_tools:
   - screen
   - zip
   - unzip
+
+src_path: src/targ_plat/http/htdocs/content
+dest_pat: /home/ecorella/var/www/html/content
