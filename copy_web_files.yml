@@ -5,7 +5,7 @@
   tasks:
     - name: "deploy web files"
       copy:
-        src: "{{ src_path }}/{{ content }}" 
+        src: "{{ src_path }}/{{ item }}" 
         dest: "{{ dest_path }}"
         owner: ecorella
         group: ecorella
