@@ -3,6 +3,7 @@ node {
   
   stage('First Stage'){
     println "$fileToDeploy"
+    sh "ls -l"
   }
   stage('test ansible'){
     sh "ansible -m debug repo"
