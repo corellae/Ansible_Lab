@@ -5,6 +5,10 @@ node {
     println "$fileToDeploy"
     sh "ls -l"
   }
+  stage('checkout'){
+    checkout scm
+    sh "ls -l"
+  }
   stage('test ansible'){
     sh "ansible -m debug repo"
   }
