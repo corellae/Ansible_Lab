@@ -10,4 +10,4 @@
         owner: ecorella
         group: ecorella
         mode: "0750"
-      with_items: "{{ content }}
+      with_items: "{{ content }}"
