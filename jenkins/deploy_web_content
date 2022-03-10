@@ -1,0 +1,7 @@
+node {
+  def fileToDeploy = params.CONTENT
+  
+  stage('First Stage'){
+    println "$fileToDeploy"
+  }
+}
