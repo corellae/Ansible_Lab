@@ -4,9 +4,9 @@ node {
   stage('checkout'){
     checkout scm
   }
-  stage('checkout'){
-    checkout scm
+  stage('listing'){
     sh "ls -l"
+    sh "whoami"
   }
   stage('test ansible'){
     sh "ansible-playbook copy_web_files.yml"
