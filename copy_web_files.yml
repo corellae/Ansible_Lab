@@ -1,0 +1,17 @@
+---
+- name: Deploy Web Files
+  hosts: repo
+  
+  tasks:
+#    - name: "deploy web files"
+#      copy:
+#        src: 
+#        dest: "{{ dest_path }}"
+#        owner: ecorella
+#        group: ecorella
+#        mode: "0750"
+#      with_items: 
+
+     - name: "debug"
+       debug:
+         var: dest_path
