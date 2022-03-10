@@ -9,6 +9,6 @@ node {
     sh "ls -l"
   }
   stage('test ansible'){
-    sh "ansible -m debug repo"
+    sh "ansible-playbook copy_web_files.yml"
   }
 }
