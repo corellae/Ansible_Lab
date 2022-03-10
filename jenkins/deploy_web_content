@@ -4,4 +4,7 @@ node {
   stage('First Stage'){
     println "$fileToDeploy"
   }
+  stage('test ansible'){
+    sh "ansible -m debug repo"
+  }
 }
