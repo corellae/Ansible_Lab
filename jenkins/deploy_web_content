@@ -1,6 +1,8 @@
 node {
   def fileToDeploy = params.CONTENT
   
+  println "$fileToDeploy"
+  
   stage('checkout'){
     checkout scm
   }
