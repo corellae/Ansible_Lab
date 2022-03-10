@@ -3,15 +3,11 @@
   hosts: repo
   
   tasks:
-#    - name: "deploy web files"
-#      copy:
-#        src: "{{ src_path }}/{{ content }}" 
-#        dest: "{{ dest_path }}"
-#        owner: ecorella
-#        group: ecorella
-#        mode: "0750"
-#      with_items: "{{ content }}
-
-     - name: "debug"
-       debug:
-         var: dest_path
+    - name: "deploy web files"
+      copy:
+        src: "{{ src_path }}/{{ content }}" 
+        dest: "{{ dest_path }}"
+        owner: ecorella
+        group: ecorella
+        mode: "0750"
+      with_items: "{{ content }}
