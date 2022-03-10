@@ -1,9 +1,8 @@
 node {
   def fileToDeploy = params.CONTENT
   
-  stage('First Stage'){
-    println "$fileToDeploy"
-    sh "ls -l"
+  stage('checkout'){
+    checkout scm
   }
   stage('checkout'){
     checkout scm
