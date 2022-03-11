@@ -11,7 +11,7 @@ node {
   }
   stage('test ansible'){
     withCredentials([usernamePassword(credentialsId: '57d885a8-f5da-4db4-a049-fb116c442178', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-      sh """ansible-playbook copy_web_files.yml -e 'ansible_ssh_user=${USER} ansible_ssh_pass=${PASS}' -e '{ \"content\" : [${toDeploy}]}'"""
+      sh ('ansible-playbook copy_web_files.yml -e 'ansible_ssh_user=${USER} ansible_ssh_pass=${PASS}' -e '{ \"content\" : [${toDeploy}]}'')
     }
   }
 }
