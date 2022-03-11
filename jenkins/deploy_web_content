@@ -1,7 +1,6 @@
 node {
-  def fileToDeploy = params.CONTENT
+  def toDeploy = params.CONTENT.split(",").collect{"\"${it}\""}.join(",").replace(" ","")
   
-  println "$fileToDeploy"
   
   stage('checkout'){
     checkout scm
