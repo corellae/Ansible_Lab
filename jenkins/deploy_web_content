@@ -10,6 +10,8 @@ node {
     sh "whoami"
   }
   stage('test ansible'){
-    sh """ansible-playbook copy_web_files.yml -e 'ansible_ssh_user=ecorella' -e '{ \"content\" : [${toDeploy}]}'"""
+    withCredentials([usernameColonPassword(credentialsId: '57d885a8-f5da-4db4-a049-fb116c442178', variable: '')]) {
+      sh """ansible-playbook copy_web_files.yml -e '{ \"content\" : [${toDeploy}]}'"""
+    }
   }
 }
