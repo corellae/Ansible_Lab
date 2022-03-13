@@ -1,5 +1,6 @@
 node {
-  def toDeploy = params.CONTENT.split(",").collect{"\"${it}\""}.join(",").replace(" ","")
+  def toDeploy = params.CONTENT.split(",").collect{"\"${it}\""}.join(",").replace(" 
+  def USER_PASSWORD = ${PASS}
     
   stage('checkout'){  
     checkout scm
@@ -9,6 +10,8 @@ node {
     sh "whoami"
   }
   stage('test ansible'){
-    sh """ansible-playbook copy_web_files.yml -e 'ansible_ssh_user=${USER} ansible_ssh_pass=${PASS}' -e '{ \"content\" : [${toDeploy}]}'"""
+    wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: USER_PASSWORD]]]){ 
+      sh """ansible-playbook copy_web_files.yml -e 'ansible_ssh_user=${USER} ansible_ssh_pass=${PASS}' -e '{ \"content\" : [${toDeploy}]}'"""
+    }
   }
 }
