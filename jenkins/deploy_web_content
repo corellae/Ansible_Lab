@@ -1,7 +1,7 @@
 node {
   def toDeploy = params.CONTENT.split(",").collect{"\"${it}\""}.join(",").replace(" ","")
     
-  stage('checkout'){
+  stage('checkout'){  
     checkout scm
   }
   stage('listing'){
@@ -9,9 +9,6 @@ node {
     sh "whoami"
   }
   stage('test ansible'){
-    withCredentials([usernamePassword(credentialsId: '57d885a8-f5da-4db4-a049-fb116c442178', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-      def ansibleCommand = """ansible-playbook copy_web_files.yml -e 'ansible_ssh_user=${USER} ansible_ssh_pass=${PASS}' -e '{ \"content\" : [${toDeploy}]}'"""
-      sh('$ansibleCommand')
-    }
+    sh """ansible-playbook copy_web_files.yml -e 'ansible_ssh_user=${USER} ansible_ssh_pass=${PASS}' -e '{ \"content\" : [${toDeploy}]}'"""
   }
 }
