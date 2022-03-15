@@ -8,5 +8,6 @@ node {
   
   stage("Test"){
     sh "ls -l"
+    sh "ls -l uniqueDir"
   }
 }
