@@ -1,13 +1,13 @@
 node {
   
   stage("Checkout"){
-    dir("uniqueDir"){
+    dir("some/dir/path"){
       checkout scm
     }
   }
   
   stage("Test"){
     sh "ls -l"
-    sh "ls -l uniqueDir"
+    sh "ls -l some"
   }
 }
