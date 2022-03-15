@@ -1,6 +1,6 @@
 ---
 - name: Setup a Jenkins Master Server
-  hosts: jenkins_master
+  hosts: jenkins
   become: yes
   
   tasks:
