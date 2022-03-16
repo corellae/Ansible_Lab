@@ -1,6 +1,6 @@
 ---
 - name: Setup a Jenkins Worker Server
-  hosts: jenkins_worker
+  hosts: jenkins_agent
   become: yes
 
   tasks:
@@ -9,7 +9,9 @@
     user:
       name: jenkins
       comment: Jenkins Automation Server
-      shell: /bin/false
       home: /var/lib/jenkins
 
-  - name: Install Java Development Kit
+  - name: Install Java 
+    yum:
+      name: java-11-openjdk.x86_64
+      state: present
