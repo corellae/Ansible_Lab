@@ -12,3 +12,8 @@ nexus.uxrealm.lab
 
 [jenkins_agent]
 whale.uxrealm.lab
+
+[acg]
+0abe93f2d52c.mylabserver.com
+0abe93f2d53c.mylabserver.com
+0abe93f2d54c.mylabserver.com

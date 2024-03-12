@@ -11,14 +11,7 @@ basic_tools:
   - net-tools
   - bind-utils
   - vim
-  - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
   - git
-  - xorg-x11-server-Xorg
-  - xorg-x11-xauth
-  - xorg-x11-apps
-  - xorg-x11-server-utils*
-  - xorg-x11-utils
-  - screen
   - zip
   - unzip
 

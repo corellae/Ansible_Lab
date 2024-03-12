@@ -1,6 +1,6 @@
 ---
 - name: Run basic host setup
-  hosts: repo
+  hosts: acg
   become: yes
 
   roles:
