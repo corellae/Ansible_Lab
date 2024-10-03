@@ -2,7 +2,6 @@
 # variables for all groups
 
 installers_dir: /installers
-java_pkg: jdk-8u301-linux-x64.rpm
 
 basic_tools:
   - wget
@@ -14,6 +13,5 @@ basic_tools:
   - git
   - zip
   - unzip
-
-src_path: src/targ_plat/http/htdocs/content
-dest_path: /home/ecorella/var/www/html/content
+  - yum-utils
+  - epel-release
