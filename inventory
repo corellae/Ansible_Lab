@@ -7,13 +7,19 @@ resolver-master.uxrealm.lab
 [repo]
 nexus.uxrealm.lab
 
-[jenkins]
-0abe93f2d55c.mylabserver.com
-
 [jenkins_agent]
 whale.uxrealm.lab
 
-[acg]
+[acg_pers]
+0abe93f2d51c.mylabserver.com
 0abe93f2d52c.mylabserver.com
 0abe93f2d53c.mylabserver.com
-0abe93f2d54c.mylabserver.com
+
+[acg_corp]
+baf0fd47661c.mylabserver.com
+baf0fd47662c.mylabserver.com
+baf0fd47663c.mylabserver.com
+
+[acg:children]
+acg_pers
+acg_corp
