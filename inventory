@@ -11,14 +11,14 @@ nexus.uxrealm.lab
 whale.uxrealm.lab
 
 [acg_pers]
-0abe93f2d51c.mylabserver.com
-0abe93f2d52c.mylabserver.com
-0abe93f2d53c.mylabserver.com
+pers1
+pers2
+pers3
 
 [acg_corp]
-baf0fd47661c.mylabserver.com
-baf0fd47662c.mylabserver.com
-baf0fd47663c.mylabserver.com
+corp1
+corp2
+corp3
 
 [acg:children]
 acg_pers
