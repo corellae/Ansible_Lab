@@ -5,8 +5,3 @@
 
   roles:
     - basic_setup 
-
-  tasks:
-    - name: "Show password var"
-      debug:
-        msg: "{{ new_password }}"
