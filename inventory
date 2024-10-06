@@ -7,6 +7,9 @@ resolver-master.uxrealm.lab
 [repo]
 nexus.uxrealm.lab
 
+[jenkins]
+pers1
+
 [jenkins_agent]
 whale.uxrealm.lab
 
