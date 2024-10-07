@@ -1,0 +1,7 @@
+---
+- name: Run basic host setup
+  hosts: postgresql
+  become: yes
+
+  roles:
+    - postgresql

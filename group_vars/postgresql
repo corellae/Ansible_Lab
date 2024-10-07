@@ -1,0 +1,11 @@
+---
+# variables for postgresql
+
+rpm_key_url: https://download.postgresql.org/pub/repos/yum/keys/PGDG-RPM-GPG-KEY-RHEL
+repo_url:    https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+postgresql_packages:
+  - postgresql17-server
+  - postgresql17-contrib
+  - postgis35_17
+  - postgis35_17-client 
