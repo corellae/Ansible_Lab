@@ -16,3 +16,5 @@ basic_tools:
   - yum-utils
   - epel-release
   - nmap-ncat
+  - bc
+  - jq
