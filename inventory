@@ -8,23 +8,19 @@ resolver-master.uxrealm.lab
 nexus.uxrealm.lab
 
 [jenkins]
-pers1
+acg1
 
 [postgresql]
-corp1
+acg7
 
 [jenkins_agent]
 whale.uxrealm.lab
 
 [acg_pers]
-pers1
-pers2
-pers3
+acg[1:6]
 
 [acg_corp]
-corp1
-corp2
-corp3
+acg[7:9]
 
 [acg:children]
 acg_pers
