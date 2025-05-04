@@ -2,6 +2,15 @@
 # tasks file for basic_setup
 
 - name: Install common tools
-  yum:
-    name: "{{ basic_tools }}"
-    state: present
+  block:
+    - name: Install packages
+      dnf:
+        name: "{{ basic_tools }}"
+        state: present
+
+  rescue:
+    - name: Install EPEL on RHEL hosts
+      dnf:
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+        state: present
+        disable_gpg_check: yes
