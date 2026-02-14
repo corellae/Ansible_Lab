@@ -7,12 +7,6 @@ resolver-master.uxrealm.lab
 [repo]
 nexus.uxrealm.lab
 
-[jenkins]
-acg4
-
-[postgresql]
-acg7
-
 [jenkins_agent]
 whale.uxrealm.lab
 
@@ -25,3 +19,9 @@ acg[7:9]
 [acg:children]
 acg_pers
 acg_corp
+
+[jenkins]
+acg1
+
+[postgresql]
+acg2
