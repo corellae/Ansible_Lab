@@ -1,7 +1,7 @@
 ---
 - name: Run basic host setup
   hosts: acg
-  become: yes
+  become: true
 
   roles:
-    - basic_setup 
+    - basic_setup

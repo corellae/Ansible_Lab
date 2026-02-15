@@ -1,23 +1,23 @@
 ---
 - name: Setup a Jenkins Master Server
   hosts: jenkins
-  become: yes
-  
+  become: true 
   tasks:
-
+  
   - name: Get repo file
-    get_url:
+    ansible.builtin.get_url:
       url: "{{ repo_url }}"
       dest: /etc/yum.repos.d/
+      mode: '0644'
 
 
   - name: Import key
-    rpm_key:
+    ansible.builtin.rpm_key:
       state: present
       key: "{{ key_url }}"
 
 
   - name: Install packages
-    yum:
+    ansible.builtin.yum:
       name: "{{ packages }}"
       state: present

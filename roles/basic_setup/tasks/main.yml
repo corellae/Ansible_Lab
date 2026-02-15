@@ -4,13 +4,13 @@
 - name: Install common tools
   block:
     - name: Install packages
-      dnf:
+      ansible.builtin.dnf:
         name: "{{ basic_tools }}"
         state: present
 
   rescue:
     - name: Install EPEL on RHEL hosts
-      dnf:
+      ansible.builtin.dnf:
         name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
         state: present
-        disable_gpg_check: yes
+        disable_gpg_check: true

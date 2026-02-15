@@ -1,11 +1,10 @@
 ---
 - name: Deploy Web Files
   hosts: repo
-  
   tasks:
-    - name: "deploy web files"
-      copy:
-        src: "{{ src_path }}/{{ item }}" 
+    - name: "Deploy web files"
+      ansible.builtin.copy:
+        src: "{{ src_path }}/{{ item }}"
         dest: "{{ dest_path }}"
         owner: ecorella
         group: ecorella

@@ -1,11 +1,12 @@
 ---
 
 - name: Copy java rpm
-  copy:
+  ansible.builtin.copy:
     src: "{{ installers_dir }}/{{ java_pkg }}"
     dest: /tmp
+    mode: '0644'
 
 - name: Install java rpm
-  yum:
+  ansible.builtin.dnf:
     name: /tmp/{{ java_pkg }}
     state: present

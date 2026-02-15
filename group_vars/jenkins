@@ -2,7 +2,7 @@
 # jenkins related variables
 
 repo_url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
-key_url: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+key_url: https://pkg.jenkins.io/rpm-stable/jenkins.io-2026.key
 
 packages:
 - java-21-openjdk.x86_64

@@ -2,15 +2,15 @@
 # tasks file for nexus
 
 - name: Add nexus user
-  user:
+  ansible.builtin.user:
     name: nexus
 
 - name: Install Java
-  include: install_java.yml
+  ansible.builtin.include_tasks: install_java.yml
   when: need_java
 
 - name: Create nexus install dir
-  file:
+  ansible.builtin.file:
     path: "{{ nexus_install_dir }}"
     state: directory
     owner: nexus
@@ -18,21 +18,21 @@
     mode: '0755'
 
 - name: Extract files
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ nexus_installer }}"
     dest: "{{ nexus_install_dir }}"
     owner: nexus
     group: nexus
 
 - name: Change extracted directories permissions
-  file:
+  ansible.builtin.file:
     path: "{{ nexus_install_dir }}"
     owner: nexus
     group: nexus
-    recurse: yes
+    recurse: true
 
 - name: Setup nexus as service
-  template:
+  ansible.builtin.template:
     src: nexus.service.j2
     dest: /etc/systemd/system/nexus.service
     owner: root
@@ -40,8 +40,8 @@
     mode: '0644'
 
 - name: Reload, enable and start nexus systemd service
-  systemd:
+  ansible.builtin.systemd:
     name: nexus.service
-    enabled: yes
+    enabled: true
     state: started
-    daemon_reload: yes
+    daemon_reload: true

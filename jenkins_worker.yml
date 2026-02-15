@@ -1,17 +1,16 @@
 ---
 - name: Setup a Jenkins Worker Server
   hosts: jenkins_agent
-  become: yes
-
+  become: true
   tasks:
 
-  - name: Create jenkins user
-    user:
+   - name: Create jenkins user
+     ansible.builtin.user:
       name: jenkins
       comment: Jenkins Automation Server
       home: /var/lib/jenkins
 
-  - name: Install Java 
-    yum:
+   - name: Install Java
+     ansible.builtin.dnf:
       name: java-11-openjdk.x86_64
       state: present

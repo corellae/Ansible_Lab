@@ -1,8 +1,7 @@
 ---
 - name: Run nexus setup
   hosts: repo
-  become: yes
-
-  roles: 
+  become: true
+  roles:
     - basic_setup
     - nexus
