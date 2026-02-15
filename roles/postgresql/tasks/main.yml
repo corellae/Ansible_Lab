@@ -4,36 +4,36 @@
 - name: "Enable CodeReady Builder repo"
   community.general.dnf_config_manager:
     state: enabled
-    name:  crb
+    name: crb
 
 - name: "Import PostgreSQL GPG key"
-  rpm_key:
+  ansible.builtin.rpm_key:
     state: present
-    key:   "{{ rpm_key_url }}"
+    key: "{{ rpm_key_url }}"
 
 - name: "Install PostgreSQL repo"
-  dnf:
+  ansible.builtin.dnf:
     state: present
-    name:  "{{ repo_url }}"
+    name: "{{ repo_url }}"
 
 - name: "Disable PostgreSQL module from base repo"
-  command: dnf -qy module disable postgresql
+  ansible.builtin.command: dnf -qy module disable postgresql
 
 - name: "Install PostgreSQL packages"
-  dnf:
+  ansible.builtin.dnf:
     state: present
-    name:  "{{ postgresql_packages }}"
+    name: "{{ postgresql_packages }}"
 
 - name: "Place service unit file"
-  template:
+  ansible.builtin.template:
     src: postgresql.service.j2
     dest: /etc/systemd/system/postgresql.service
     owner: root
     group: root
-    mode: 0755
+    mode: '0755'
 
 - name: "Reload daemon, start and enable postgresql service"
-  systemd_service:
+  ansible.builtin.systemd_service:
     daemon_reload: true
     state: started
     enabled: true
